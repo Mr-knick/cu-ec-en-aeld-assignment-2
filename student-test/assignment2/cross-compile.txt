@@ -1,0 +1,107 @@
+version, configuration and sysroot path (output of -print-sysroot)
+
+kb@UbuntuCUB:~/dev/finder-app$ file writer
+writer: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, for GNU/Linux 3.7.0, with debug_info, not stripped
+
+_______________________________________________________________
+
+Test results:
+
+kb@UbuntuCUB:~/dev$ ./full-test.sh 
+starting test with SKIP_BUILD="" and DO_VALIDATE=""
+Running test with user kb
+-- Generating ;/home/kb/dev/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/kb/dev/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c from test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c
+-- Building executable including ;/home/kb/dev/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/kb/dev/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c and ../examples/autotest-validate/autotest-validate.c
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kb/dev/build
+[ 10%] Building C object assignment-autotest/Unity/src/CMakeFiles/unity.dir/unity.c.o
+[ 20%] Linking C static library libunity.a
+[ 20%] Built target unity
+[ 30%] Generating ../../assignment-autotest/test/assignment1/Test_hello_Runner.c, ../../assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c, ../../assignment-autotest/test/unity_runner.c
+Test files for auto dependency generation test/assignment1/Test_hello.c test/assignment1/Test_assignment_validate.c
+Autogenerating runner for test/assignment1/Test_hello.c
+Autogenerating runner for test/assignment1/Test_assignment_validate.c
+Autogenerating test/unity_runner.c
+[ 40%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
+[ 50%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
+[ 60%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
+[ 70%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
+[ 80%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
+[ 90%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
+[100%] Linking C executable assignment-autotest
+[100%] Built target assignment-autotest
+/home/kb/dev/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/kb/dev/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/kb/dev/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/dev/assignment-autotest/test/assignment2 ~/dev
+~/dev/finder-app ~/dev/assignment-autotest/test/assignment2 ~/dev
+rm -f writer *.o
+gcc -Wall -Werror -g -c writer.c -o writer.o
+gcc -Wall -Werror -g -o writer writer.o
+Performing make clean
+rm -f writer *.o
+Using default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+/tmp/aeld-data created
+rm -f writer *.o
+gcc -Wall -Werror -g -c writer.c -o writer.o
+gcc -Wall -Werror -g -o writer writer.o
+Searching /tmp/aeld-data for AELD_IS_FUN The number of files are 10 and the number of matching lines are 10
+success
+Test of assignment assignment2 complete with success
+
+_________________________________________________________
+
+Sysroot:
+
+Feb  1 17:37:00 UbuntuCUB runsvc.sh[13484]: Current runner version: '2.331.0'
+Feb  1 17:37:00 UbuntuCUB runsvc.sh[13484]: 2026-02-02 01:37:00Z: Listening for Jobs
+Feb  1 17:41:47 UbuntuCUB writer.c[13867]: Error opening file
+Feb  1 17:41:47 UbuntuCUB writer.c[13868]: Error opening file
+Feb  1 17:41:47 UbuntuCUB writer.c[13888]: File /tmp/aeld-data/Mr-knick1.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13889]: File /tmp/aeld-data/Mr-knick2.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13890]: File /tmp/aeld-data/Mr-knick3.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13891]: File /tmp/aeld-data/Mr-knick4.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13892]: File /tmp/aeld-data/Mr-knick5.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13893]: File /tmp/aeld-data/Mr-knick6.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13894]: File /tmp/aeld-data/Mr-knick7.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13895]: File /tmp/aeld-data/Mr-knick8.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13896]: File /tmp/aeld-data/Mr-knick9.txt created/ovverwritten successfully. abcd
+Feb  1 17:41:47 UbuntuCUB writer.c[13897]: File /tmp/aeld-data/Mr-knick10.txt created/ovverwritten successfully. abcd
+Feb  1 17:42:44 UbuntuCUB writer.c[14114]: Missing input values
+Feb  1 17:42:44 UbuntuCUB writer.c[14114]: Writing <./writer> to <(null)>
+Feb  1 17:42:44 UbuntuCUB writer.c[14114]: Error opening file
+Feb  1 17:42:44 UbuntuCUB writer.c[14115]: Missing input values
+Feb  1 17:42:44 UbuntuCUB writer.c[14115]: Writing <./writer> to <>
+Feb  1 17:42:44 UbuntuCUB writer.c[14115]: Error opening file
+Feb  1 17:42:45 UbuntuCUB writer.c[14155]: Writing <./writer> to </tmp/aeld-data/Mr-knick1.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14155]: File /tmp/aeld-data/Mr-knick1.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14157]: Writing <./writer> to </tmp/aeld-data/Mr-knick2.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14157]: File /tmp/aeld-data/Mr-knick2.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14158]: Writing <./writer> to </tmp/aeld-data/Mr-knick3.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14158]: File /tmp/aeld-data/Mr-knick3.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14160]: Writing <./writer> to </tmp/aeld-data/Mr-knick4.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14160]: File /tmp/aeld-data/Mr-knick4.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14162]: Writing <./writer> to </tmp/aeld-data/Mr-knick5.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14162]: File /tmp/aeld-data/Mr-knick5.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14164]: Writing <./writer> to </tmp/aeld-data/Mr-knick6.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14164]: File /tmp/aeld-data/Mr-knick6.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14165]: Writing <./writer> to </tmp/aeld-data/Mr-knick7.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14165]: File /tmp/aeld-data/Mr-knick7.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14166]: Writing <./writer> to </tmp/aeld-data/Mr-knick8.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14166]: File /tmp/aeld-data/Mr-knick8.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14167]: Writing <./writer> to </tmp/aeld-data/Mr-knick9.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14167]: File /tmp/aeld-data/Mr-knick9.txt created/overwritten successfully.
+Feb  1 17:42:45 UbuntuCUB writer.c[14168]: Writing <./writer> to </tmp/aeld-data/Mr-knick10.txt>
+Feb  1 17:42:45 UbuntuCUB writer.c[14168]: File /tmp/aeld-data/Mr-knick10.txt created/overwritten successfully.
