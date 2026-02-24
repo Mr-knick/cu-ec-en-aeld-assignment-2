@@ -3,9 +3,9 @@ TARGET = writer
 # Compiler settings
 # If CROSS_COMPILE is provided (e.g., aarch64-none-linux-gnu-), 
 # it prefixes gcc. Otherwise, it defaults to native gcc.
-CC = $(CROSS_COMPILE)gcc
-CFLAGS = -Wall -Werror -g
-
+CC ?= $(CROSS_COMPILE)gcc
+CFLAGS ?= -Wall -Werror -g
+LDFLAGS ?=
 # Source and Object files
 SRCS = writer.c
 OBJS = $(SRCS:.c=.o)
